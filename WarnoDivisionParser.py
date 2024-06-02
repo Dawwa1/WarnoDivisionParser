@@ -1,20 +1,6 @@
 import re
 import json
-import logging  # not necassary, but its pretty cool
-
-# Function to double the last comma-separated number in each line
-def double_last_number(text):
-    def double_match(match):
-        # Extract the matched number, double it, and return the modified string
-        number = int(match.group(2))
-        doubled_number = number * 2
-        return f"{match.group(1)}{doubled_number})"
-    # Regex pattern to match the last comma-separated number
-    pattern = re.compile(r'(, )(\d+)\)')
-    
-    # Replace occurrences using the pattern and double_match function
-    modified_text = re.sub(pattern, double_match, text)
-    return modified_text
+import logging  # not necassary, but its pretty cool to have a log file
 
 # Function to parse the descriptor blocks
 def parse_descriptors(data):
